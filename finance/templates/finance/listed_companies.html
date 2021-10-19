@@ -1,0 +1,141 @@
+
+{% extends 'finance/home.html' %}
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+</head>
+<body class="">
+    {% block content %}
+        <h1 class="font-mono text-3xl p-2 m-8">Listed Companies</h1>
+        <div class="main-container">
+            <div class="border border-gray-400 m-8">
+                <div class="min-w-full mb-5 border-b bg-gray-100">
+                    <h2 class="p-2 text-xl min-w-full">Development Bank</h2>
+                </div>
+                <table class="border-collapse border min-w-full  p-8">
+                    <thead class="bg-gray-800 text-white " >
+                        <tr class="">
+                            <th class="border w-auto hover:underline ">S.N</th>
+                            <th class="border w-auto">Company</th>
+                            <th class="border w-auto">Symbol</th>
+                            <th class="border w-auto">LTP</th>
+                            <th class="border w-auto">Market Capital</th>
+                        </tr>
+                    </thead>
+                    {% for company in companies %}
+                    <tbody class="">
+                        <tr class="border text-center font-medium ">
+                            <td class="border">{{forloop.counter}}.</td>
+                            <td class="border p-2 text-indigo-500 hover:text-red-600 cursor-pointer">{{company.name}}</td>
+                            <td class="border"></td>
+                            <td class="border"></td>
+                            <td class="border"></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                
+                </table>
+            </div>
+
+            <div class="border border-gray-400 m-8">
+                <div class="min-w-full mb-5 border-b bg-gray-100">
+                    <h2 class="p-2 text-xl min-w-full">Microfinance</h2>
+                </div>
+                <table class="border-collapse border min-w-full  p-8">
+                    <thead class="bg-gray-800 text-white " >
+                        <tr class="">
+                            <th class="border w-auto hover:underline ">S.N</th>
+                            <th class="border w-auto">Company</th>
+                            <th class="border w-auto">Symbol</th>
+                            <th class="border w-auto">LTP</th>
+                            <th class="border w-auto">Market Capital</th>
+                        </tr>
+                    </thead>
+                   <tbody></tbody>
+                
+                </table>
+            </div>
+            
+            <div class="border border-gray-400 m-8">
+                <div class="min-w-full mb-5 border-b bg-gray-100">
+                    <h2 class="p-2 text-xl min-w-full">Hydro Power</h2>
+                </div>
+                <table class="border-collapse border min-w-full  p-8">
+                    <thead class="bg-gray-800 text-white " >
+                        <tr class="">
+                            <th class="border w-auto hover:underline ">S.N</th>
+                            <th class="border w-auto">Company</th>
+                            <th class="border w-auto">Symbol</th>
+                            <th class="border w-auto">LTP</th>
+                            <th class="border w-auto">Market Capital</th>
+                        </tr>
+                    </thead>
+                   <tbody></tbody>
+                
+                </table>
+            </div>
+            <div class="border border-gray-400 m-8">
+                <div class="min-w-full mb-5 border-b bg-gray-100">
+                    <h2 class="p-2 text-xl min-w-full">Banking</h2>
+                </div>
+                <table class="border-collapse border min-w-full  p-8">
+                    <thead class="bg-gray-800 text-white " >
+                        <tr class="">
+                            <th class="border w-auto hover:underline ">S.N</th>
+                            <th class="border w-auto">Company</th>
+                            <th class="border w-auto">Symbol</th>
+                            <th class="border w-auto">LTP</th>
+                            <th class="border w-auto">Market Capital</th>
+                        </tr>
+                    </thead>
+                   <tbody></tbody>
+                
+                </table>
+            </div>
+            <div class="border border-gray-400 m-8">
+                <div class="min-w-full mb-5 border-b bg-gray-100">
+                    <h2 class="p-2 text-xl min-w-full">Life Insurance</h2>
+                </div>
+                <table class="border-collapse border min-w-full  p-8">
+                    <thead class="bg-gray-800 text-white " >
+                        <tr class="">
+                            <th class="border w-auto hover:underline ">S.N</th>
+                            <th class="border w-auto">Company</th>
+                            <th class="border w-auto">Symbol</th>
+                            <th class="border w-auto">LTP</th>
+                            <th class="border w-auto">Market Capital</th>
+                        </tr>
+                    </thead>
+                   <tbody></tbody>
+                
+                </table>
+            </div>
+            <div class="border border-gray-400 m-8">
+                <div class="min-w-full mb-5 border-b bg-gray-100">
+                    <h2 class="p-2 text-xl min-w-full">Hotels</h2>
+                </div>
+                <table class="border-collapse border min-w-full  p-8">
+                    <thead class="bg-gray-800 text-white " >
+                        <tr class="">
+                            <th class="border w-auto hover:underline ">S.N</th>
+                            <th class="border w-auto">Company</th>
+                            <th class="border w-auto">Symbol</th>
+                            <th class="border w-auto">LTP</th>
+                            <th class="border w-auto">Market Capital</th>
+                        </tr>
+                    </thead>
+                   <tbody></tbody>
+                
+                </table>
+            </div>
+        </div>
+    {% endblock content %}
+    
+</body>
+</html>

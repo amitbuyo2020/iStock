@@ -1,0 +1,85 @@
+{% extends 'finance/home.html' %}
+
+{% block content %}
+
+    <div class="container m-2 overscroll-x-auto">
+        <h1 class="border-b ml-8 mt-8 mr-8 pb-2 mb-8 font-mono text-2xl font-bold leading-6">Company Annual Reports 
+            <span class="text-sm font-thin">(Source: Nepal Stock Exchange and other Media)</span>
+        </h1>
+        <h2 class="m-2 font-mono text-center font-bold text-2xl border-b mb-5">Annual Asset Reports</h2>
+            <table class="border-collapse border min-w-full  p-8 ">
+                <thead class="bg-blue-500 text-white ">
+                    <tr class="m-5">
+                        <th class="border w-auto">Fiscal Year</th>
+                        <th class="border w-auto" >Cash & Cash equivalence</th >
+                        <th class="border w-auto" >Due From NRB</th>
+                        <th class="border w-auto" >Loans & Advances</th>
+                        <th class="border w-auto" >Investments</th>
+                        <th class="border w-auto" >Other Assets</th>
+                        <th class="border w-auto" >Current Tax Assets</th>
+                        <th class="border w-auto" >Deferred Tax Assets</th>
+                        <th class="border w-auto" >Goodwill & Intangible Assets</th>
+                        <th class="border w-auto" >Property & Equipment</th>
+                        <th class="border w-auto" >Total Assets</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for asset in assets %}
+                    <tr class="font-serif border text-center font-medium ">
+                        <td class="border">{{asset.year}}</td>
+                        <td class="border">{{asset.cash_equiv}}</td>
+                        <td class="border">{{asset.due_from_nrb}}</td>
+                        <td class="border">{{asset.loans_advances}}</td>
+                        <td class="border">{{asset.investments}}</td>
+                        <td class="border">{{asset.other_assets}}</td>
+                        <td class="border">{{asset.current_tax_assets}}</td>
+                        <td class="border">{{asset.deferred_tax_assets}}</td>
+                        <td class="border">{{asset.goodwill_assets}}</td>
+                        <td class="border">{{asset.property_equipment}}</td>
+                        <td class="border">{{asset.total_assets}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- Income Statement Table -->
+            <h2 class="m-2 text-center font-mono font-bold border-b text-2xl mt-8 mb-8 ">Income Statements</h2>
+            <table class="border-collapse border min-w-full  p-8">
+                <thead class="bg-blue-500 text-white ">
+                    <tr class="m-5">
+                        <th class="border w-auto">Fiscal Year</th>
+                        <th class="border w-auto" >Net Interest Income</th >
+                        <th class="border w-auto" >Net Fees & Commission</th>
+                        <th class="border w-auto" >Net interest, fees & commission</th>
+                        <th class="border w-auto" >Total Operating Income</th>
+                        <th class="border w-auto" >Net Operating Income</th>
+                        <th class="border w-auto" >Operating Profit</th>
+                        <th class="border w-auto" >Profit Before Tax</th>
+                        <th class="border w-auto" >Income Tax</th>
+                        <th class="border w-auto" >Current Tax</th>
+                        <th class="border w-auto" >Deferred Tax</th>
+                        <th class="border w-auto" >Profit/Loss Ratio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{incomes}}
+                    {% for income in incomes %}
+                    <tr class="font-serif border text-center font-medium ">
+                        <td class="border">{{income.year}}</td>
+                        <td class="border">{{income.net_int_income}}</td>
+                        <td class="border">{{income.net_fees_income}}</td>
+                        <td class="border">{{income.net_fees_interest_income}}</td>
+                        <td class="border">{{income.other_operating_income}}</td>
+                        <td class="border">{{income.net_operating_income}}</td>
+                        <td class="border">{{income.operating_profit}}</td>
+                        <td class="border">{{income.profit_bef_tax}}</td>
+                        <td class="border">{{income.income_tax}}</td>
+                        <td class="border">{{income.current_tax}}</td>
+                        <td class="border">{{income.deferred_tax}}</td>
+                        <td class="border">{{income.ratio_profit_loss}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+{% endblock content %}

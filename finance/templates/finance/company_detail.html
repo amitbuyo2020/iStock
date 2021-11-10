@@ -1,0 +1,19 @@
+{% extends 'finance/home.html' %}
+{% block content %}
+    <div class="main">
+        <h1 class="text-3xl font-serif border-b m-16 my-4">Company Profile</h1>
+        <div class="general-info border rounded-md font-serif m-16 mt-8">
+            <h1 class="company_name text-xl font-bold p-2 ">Salt Trading Limited</h1>
+            <p class="symbol p-2 font-bold">Symbol: SLT</p>
+            <p class="category p-2 font-bold">Category: Commercial Bank</p>
+            <p class=" text-blue-800"><a class="link p-2 hover:underline " href="https://xyz.com">https://xyz.com</a></p>
+        </div>
+        <div class="menu flex flex-row">
+            <p>Overview</p>
+            <p>Financials {{sheets.total_liab}}</p>
+            <p>Peers</p>
+            <p>Holding</p>
+            <p>News</p>
+        </div>
+    </div>
+{% endblock content %}
